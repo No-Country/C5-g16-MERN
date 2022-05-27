@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const SchemaUser = new mongoose.mongoose.Schema(
+const SchemaUser = new mongoose.Schema(
   {
     name: {
       type: String,
       required: [true, "Nombre es obligatorio"],
     },
+
     email: {
       type: String,
       required: [true, "Email es obligatorio"],
@@ -16,19 +17,21 @@ const SchemaUser = new mongoose.mongoose.Schema(
       },
       unique: true,
     },
+
     password: {
       type: String,
       required: [true, "Password obligatorio."],
       minlength: [8, "Password debe tener al menos 8 caracteres"],
     },
   },
+
   { timestamps: true, versionKey: false }
 );
 
 //its temporary just to compare
 SchemaUser.virtual("confirmPassword")
   .get(() => this._confirmPassword)
-  .set((value) => this._confirmPassword);
+  .set((value) => (this._confirmPassword = value));
 
 //middleware
 SchemaUser.pre("validate", function (next) {

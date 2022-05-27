@@ -1,4 +1,4 @@
-import Logo from "../Images/field.svg";
+import { Link, useParams } from "react-router-dom";
 import "./../Styles/navbar.css";
 
 const NavBar = () => {
@@ -26,7 +26,9 @@ const NavBar = () => {
             <a href="#registrate">Registrate</a>
           </li>
           <li>
-            <a href="#ingressa">Ingresar</a>
+            <Link to="/login" className="btn btn-primary">
+              Ingresar
+            </Link>
           </li>
         </ul>
       </nav>
