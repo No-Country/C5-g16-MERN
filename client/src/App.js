@@ -1,16 +1,23 @@
-import Header from "./components/NavBar";
-import Footer from "./components/Footer";
-import Slider from "./components/Carousel";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./App.css";
+import Home from "./pages/Home";
+
+import styled from "styled-components";
+
+const Container = styled.div`
+  background-color: #209724;
+`;
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Slider />
-      <Footer />
-    </div>
+    <Container>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact render={() => <Home />} />
+        </Switch>
+      </BrowserRouter>
+    </Container>
   );
 }
 
