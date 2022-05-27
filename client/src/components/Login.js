@@ -3,6 +3,14 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
+const Container = styled.div`
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg");
+  background-size: 100% 120%;
+`;
+
 const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -38,13 +46,6 @@ const Login = () => {
       })
       .catch((err) => setErrors(err.response.data.errors));
   };
-
-  const Container = styled.div`
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    background-image: url("https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  `;
 
   const login = (e) => {
     e.preventDefault();
