@@ -1,0 +1,22 @@
+.imgSlider{
+    width: 100%;
+    height: 500px;
+    padding: 0;
+
+};
+.title{
+margin-left: 20px;
+};
+.titleBox{
+    position: absolute;
+    
+}
+
+@media (max-width:400px) {
+    .imgSlider{
+        height: 200px;
+    }
+    .title{
+        font-size: 14px;
+    }
+}
