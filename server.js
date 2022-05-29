@@ -14,7 +14,7 @@ app.use(cookieParser());
 //to access from different directions
 app.use(
   cors({
-    origin: "http://localhost/3000",
+    origin: "http://localhost:3000",
     //Credentials required
     credentials: true,
   })

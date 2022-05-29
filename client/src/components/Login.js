@@ -3,6 +3,14 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
+const Container = styled.div`
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg");
+  background-size: 100% 120%;
+`;
+
 const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -64,9 +72,6 @@ const Login = () => {
       .catch((err) => console.log(err));
   };
 
-  const Container = styled.div`
-    background-image: url(https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-  `;
   return (
     <Container>
       <div className="container">
@@ -75,7 +80,7 @@ const Login = () => {
             <h2>Registro</h2>
             <form onSubmit={registro}>
               <div className="form-group">
-                <label htmlFor="firstName">Nombre</label>
+                <label htmlFor="name">Nombre</label>
                 <input
                   type="text"
                   name="name"
@@ -84,10 +89,8 @@ const Login = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
-                {errors.firstName ? (
-                  <span className="text-danger">
-                    {errors.firstName.message}
-                  </span>
+                {errors.name ? (
+                  <span className="text-danger">{errors.name.message}</span>
                 ) : null}
               </div>
               <div className="form-group">
