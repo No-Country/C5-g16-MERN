@@ -6,9 +6,10 @@ import Home from "./pages/Home";
 import styled from "styled-components";
 import Login from "./components/Login";
 
-const Container = styled.div`
-  background-color: #209724;
-`;
+// const Container = styled.div`
+//   background-color: #209724;
+// `;
+const Container = styled.div``;
 
 function App() {
   return (
