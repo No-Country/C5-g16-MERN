@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up("sm")]: {
 			display: "block",
 		},
+		
 	},
 	footerList: {
 		listStyle: "none",
@@ -36,14 +37,23 @@ const useStyles = makeStyles((theme) => ({
 		textAlign: "center",
 		display: 'flex',
     	gap: '28px',
+		[theme.breakpoints.down("sm")]: {
+			with: "80%",
+			gap: "18px",
+		},
+		
 	},
 	linkItemFooterList: {
 		textDecoration: "none",
-		color: '#000'
+		color: '#000',
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "12px",
+		},
 	},
 	footerListTitle: {
 		textDecoration: "underline",
 		fontWeight: "500",
+		
 	},
 	itemsContainer: {
 		display: "flex",
@@ -71,10 +81,16 @@ const useStyles = makeStyles((theme) => ({
 	socialMediaList: {
 		display: 'flex',
 		justifyContent: 'center',
+		
 	},
 	socialMediaLinkItem: {
 		textDecoration: 'none',
-	}
+	},
+	logo: {
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "20px",
+		},
+	},
 }));
 
 export default useStyles;
