@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+import { ThemeProvider } from '@mui/material'
+import theme from './theme'
 import "./App.css";
 import Home from "./pages/Home";
 
@@ -13,6 +14,7 @@ const Container = styled.div``;
 
 function App() {
   return (
+    <ThemeProvider theme={theme}>
     <Container>
       <BrowserRouter>
         <Switch>
@@ -21,6 +23,7 @@ function App() {
         </Switch>
       </BrowserRouter>
     </Container>
+    </ThemeProvider>
   );
 }
 
