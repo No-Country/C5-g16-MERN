@@ -1,38 +1,35 @@
+import { Typography, Box } from "@mui/material";
+import { Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
-import "./../Styles/navbar.css";
+import "../Styles/navbarStyles.js";
+import useStyles from "../Styles/navbarStyles.js"
 
 const NavBar = () => {
+  const classes = useStyles()
   return (
-    <div className="nav">
+    <>
+    <div className={classes.nav}>
       <div>
-        <h1 className="title">La Cancha</h1>
-        {/* <a href="home" className="" ><img src= {Logo} alt = "#"/></a>  */}
-        <span className="subtitle">
+        <h1 className={classes.title}>La Cancha</h1>
+       
+        <span className={classes.subtitle}>
           Canchas cerca para jugar con los amigos
         </span>
       </div>
       <nav>
-        <ul className="navul">
+        <ul className={classes.navul}>
           <li>
-            <a href="#centro">Perfil</a>
-          </li>
-          <li>
-            <a href="#favoritas">Favoritas</a>
-          </li>
-          <li>
-            <a href="#buscar">Buscar</a>
-          </li>
-          <li>
-            <a href="#registrate">Registrate</a>
-          </li>
-          <li>
-            <Link to="/login" className="btn btn-primary">
-              Ingresar
+            <Link to="/login">
+              <Button variant="contained" size="small" color="success" className={classes.goButton}>Ingresar</Button>
             </Link>
           </li>
         </ul>
       </nav>
     </div>
+    <Box>
+      <p className={classes.miniSub}>Canchas cerca para jugar con los amigos</p>
+      </Box>
+    </>
   );
 };
 

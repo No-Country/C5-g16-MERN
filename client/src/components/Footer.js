@@ -71,7 +71,7 @@ export default function Footer() {
 								))}
 							</ul>
 						</Box>
-                        <h3 className="title">La Cancha</h3>
+                        <h3 className={classes.logo}>La Cancha</h3>
 						<Box>
 							<ul className={classes.footerList}>
 								{navigationItemsRight.map(({ name, url }, index) => (
