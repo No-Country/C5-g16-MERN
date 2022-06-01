@@ -1,14 +1,23 @@
-.buscarInput > input {
-    background-color: white;
-    border: 0;
-    border-radius: 2px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    font-size: 18px;
-    padding: 15px;
-    height: 30px;
-    width: 300px;
-  }
+
+.buscaInput input {
+  background-color: white;
+  
+  border-radius: 2px #65A844;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 18px;
+  padding: 15px;
+  height: 50px;
+  width: 300px;
+}
+.iconBusca {
+  padding-right: 25px;
+  background: url("../../Images/buscador.svg") no-repeat right;
+  background-size: 30px;
+}
+input:focus {
+  outline: none;
+}
   .dataResult {
     margin-top: 5px;
     width: 300px;
@@ -18,4 +27,8 @@
     overflow: hidden;
     overflow-y: auto;
   }
+  .canchasContainer {
+    display: flex;
+  }
+
   
