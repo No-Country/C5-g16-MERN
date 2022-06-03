@@ -5,6 +5,10 @@ import {IconButton,
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import GroupsIcon from '@mui/icons-material/Groups';
+import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+
 
 const GreenBtn = styled(Button)(({theme})=> ({
     backgroundColor: "#65A844",
@@ -29,7 +33,7 @@ const CardCancha = ({data}) => {
             <CardMedia
             component="img"
             height="194"
-            image={require("../../Images/field1.jpg")}
+            image={require("../../Images/" + data.img)}
             alt="cancha1"
       />
                 <CardContent>
@@ -43,11 +47,28 @@ const CardCancha = ({data}) => {
                         <WhatsAppIcon/>
                     </IconButton>{data.telefono}</Typography>
                     <Typography>
-                        <IconButton aria-label="share">
+                        <IconButton >
                         <AttachMoneyIcon/> </IconButton> {data.precio}
-                       </Typography>
-                    
-                       <GreenBtn  variant="contained" >Reservar</ GreenBtn>
+                    </Typography>
+                    <Typography>
+                        <IconButton >
+                            <GroupsIcon/> 
+                       </IconButton> 
+                       {data.cantidad}
+                    </Typography>
+                    <Typography>
+                        <IconButton >
+                            <SportsSoccerIcon/>
+                       </IconButton> 
+                       {data.descripción}
+                    </Typography>
+                    <Typography>
+                        <IconButton >
+                            <DirectionsCarIcon/>
+                       </IconButton> 
+                       {data.parqueadero}
+                    </Typography>
+                    <GreenBtn  variant="contained" >Reservar</ GreenBtn>
                     </CardContent>
             
         </Card>

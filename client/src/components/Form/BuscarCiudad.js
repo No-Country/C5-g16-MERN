@@ -2,7 +2,7 @@ import {useState} from "react"
 import "./Form.css"
 
 
-const BuscarCiudad = ({setData, placeholder, data}) => {
+const BuscarCiudad = ({setCity, placeholder, data}) => {
    const [filterData, setFilterDate ] = useState([]);
    const handleChange = (event) => {
        const buscarPalabra = event.target.value
@@ -16,7 +16,7 @@ const BuscarCiudad = ({setData, placeholder, data}) => {
         const nombre = event.target.textContent;
         document.querySelector('#cancha').value = nombre;
         setFilterDate([]);
-        setData(id);
+        setCity(id);
    }
 
     return (

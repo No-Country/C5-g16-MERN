@@ -8,13 +8,12 @@ import "./Form.css";
 import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import TimePicker from '@mui/lab/TimePicker';
-import DateTimePicker from '@mui/lab/DateTimePicker';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
 import MobileDatePicker from '@mui/lab/MobileDatePicker';
 import { Grid , styled, Button, Box} from '@mui/material';
-import CardCancha from "./CardCancha";
-import {spacing} from '@mui/system'
+import Time from  './Time'
+import CardCancha  from './CardCancha'
+
 
 const Form = () => {
     {/*const  [dateValue, setSelectDate ] = useState(null) */}
@@ -38,9 +37,7 @@ const Form = () => {
 
     const [valueCity, setCity] = useState('');
 
-    const setCiudad = (indexCiudad) => {
-        setCity(indexCiudad);
-    }
+   
 
     const search = () => {
         setCanchasData(Canchas[valueCity].canchas); // setCanchasData(data[id].canchas);
@@ -48,7 +45,7 @@ const Form = () => {
 
     return (
         <>
-        <Grid container  sx={{mt:"8rem", mb:"2rem" }} 
+        <Grid container  sx={{mt:"8rem", mb:"8rem" }} 
             spacing={3}
             direction="row"
             align="center"
@@ -59,7 +56,7 @@ const Form = () => {
             style={{ minHeight: '100px' }} >
         <Grid item xs={12}  sm={12} md= {4}>
             
-            <BuscarCiudad setData={setCiudad} placeholder={"¿Donde queréis jugar?"} data={Canchas} />
+            <BuscarCiudad setCity={setCity} placeholder={"¿Donde queréis jugar?"} data={Canchas} />
             {/*<DatePicker select= {dateValue} 
                 onChange= {date => setSelectDate(date)}
                 dateFormat = 'dd/MM/yyyy'
@@ -91,17 +88,23 @@ const Form = () => {
                         onChange={handleChange}
                         renderInput={(params) => <TextField {...params} />/>*/}
                  
-                        <TimePicker 
+                       {/* <TimePicker 
                             label="Time"
                             value={valueDate}
                             onChange={handleChange}
                             renderInput={(params) => <TextField {...params} />}
 
-                        />
+                    />*/}
+                    
+                    <Time/>
+                  
                     
                  </Box>
                     </LocalizationProvider>
+
                     </Grid>
+                   
+                    
                     <Grid item  xs={12}  sm={12} md= {4}>
                     <GreenBtn  variant="contained" onClick={search}>Buscar</ GreenBtn>
                     </Grid>
