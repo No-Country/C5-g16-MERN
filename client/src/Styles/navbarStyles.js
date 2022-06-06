@@ -1,4 +1,5 @@
 import { makeStyles } from '@mui/styles'
+import { palette } from '@mui/system';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -58,6 +59,7 @@ miniSub:{
         justifyContent: "center",
 
 }},
+
 }));
 
 

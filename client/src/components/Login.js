@@ -4,11 +4,11 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
-  height: 100vh;
+  
   display: flex;
   align-items: center;
-  background-image: url("https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg");
-  background-size: 100% 120%;
+  
+
 `;
 
 const Login = () => {
