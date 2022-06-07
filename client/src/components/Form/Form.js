@@ -40,7 +40,8 @@ const Form = () => {
    
 
     const search = () => {
-        setCanchasData(Canchas[valueCity].canchas); // setCanchasData(data[id].canchas);
+        let cancha = Canchas.filter(cancha => cancha.id === valueCity).pop()
+        setCanchasData(cancha.canchas); // setCanchasData(data[id].canchas);
     }
 
     return (
@@ -112,7 +113,7 @@ const Form = () => {
                 {canchasData.length !== 0 && (
                 <div className="canchasContainer">
                     {canchasData.map((value, key) => {
-                        return <CardCancha data={value}/>;
+                        return <CardCancha key={key} data={value}/>;
                     })}
                 </div>
             )}

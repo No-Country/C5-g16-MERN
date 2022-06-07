@@ -27,7 +27,7 @@ const BuscarCiudad = ({setCity, placeholder, data}) => {
             
             {filterData.length !== 0 && (
             <div className= "dataResult" >{filterData.map((value, key ) => {
-                return (<button className="canchaItem" data-index={value.id} onClick={selectItem}>{value.nombre}</button>)
+                return (<button key={key} className="canchaItem" data-index={value.id} onClick={selectItem}>{value.nombre}</button>)
                 // return( <a className="canchaItem" href={value.link} target="_blank" rel="noreferrer"><p>{value.nombre}</p></a>)
             })}
             </div>

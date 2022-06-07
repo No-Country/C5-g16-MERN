@@ -8,25 +8,17 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import GroupsIcon from '@mui/icons-material/Groups';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import ModalPagar from '../ModalPagar';
 
 
-const GreenBtn = styled(Button)(({theme})=> ({
-    backgroundColor: "#65A844",
-    color: '#FFFFFF',
-    borderRadius: '16px',
-    cursor: 'pointer',
-    padding: "10px 20px" ,
-    "&:hover": {
-        backgroundColor: "rgba(101, 168, 68, 0.56)"
-    }  
-})) 
+ 
 const CardCancha = ({data}) => {
     return (
-        <Grid container 
+        <Grid container  columns={{ xs: 12 }}
        
         style={{ minHeight: '300px', padding: '4rem' }}
         >
-            <Grid item xs={12}  sm={12} md= {6}>
+            <Grid item xs={12}  sm={12} md= {6}  >
             <Card sx={{ maxWidth: 300 }}>
             <CardHeader title={data.nombre} 
             subheader=""/>
@@ -68,9 +60,11 @@ const CardCancha = ({data}) => {
                        </IconButton> 
                        {data.parqueadero}
                     </Typography>
-                    <GreenBtn  variant="contained" >Reservar</ GreenBtn>
+                    {/*<GreenBtn  variant="contained" >Reservar</ GreenBtn>*/}
+                    
                     </CardContent>
-            
+                   
+                    <ModalPagar />
         </Card>
         </Grid>
         </Grid>
